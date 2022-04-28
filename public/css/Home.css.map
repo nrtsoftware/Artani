@@ -1,0 +1,12 @@
+{
+    "version": 3,
+    "mappings": "ACCA,AAAA,IAAI,EAAC,IAAI,CAAC;EACP,WAAW,ECDN,QAAQ,EAAE,UAAU;CDCH",
+    "sources": [
+        "Home.sass",
+        "partials/abstract/_base.sass",
+        "partials/abstract/_variaveis.sass",
+        "partials/_partial.sass"
+    ],
+    "names": [],
+    "file": "Home.css"
+}
