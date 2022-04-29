@@ -1,13 +1,8 @@
 
 <!DOCTYPE html>
 <html lang="<?=HTML_LANGUAGE?>">
-
-<?php $Shortcut = new Shortcut;
-      $Shortcut->setHTML(HTML_SHORTCUT); ?>
-
   <head>
     <meta charset="utf-8">
-    <base href="<?=BASE_DIR?>">
-    <link rel="shortcut icon" type="imagex/png" 
-    href="<?= $Shortcut->getHTML() ?>">
+    <base href="<?= BASE_URL?>">
+    <link rel="shortcut icon" type="imagex/png" href="<?=HTML_SHORTCUT?>">
     <meta name="viewport" content="<?=VIEW_PORT?>">

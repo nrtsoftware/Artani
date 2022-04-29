@@ -7,7 +7,11 @@ class Component {
   *@param $script false by default, true looks for .js with componet name
   *.css e .js will be searched in CSS_DIR and JS_DIR         */
 
+  /**@param $page Layout type variable
+   * @param $component name with out extension
+   */
   public static function render(
+    Layout $page,
     string $component,
     //array $class = [], 
     //bool $style = false, 
@@ -16,17 +20,15 @@ class Component {
       
       //if ($class){}
 
-      if(($cssComponentDir=searchFile(CSS_DIR, "$component.css"))){
-        echo '<link rel="stylesheet" type="text/css" href="'."$cssComponentDir>"; }
+      if(($cssComponentDir=searcher(CSS_DIR, "$component.css"))){
+        echo '<link rel="stylesheet" type="text/css" href="'.htmlNormalizer($cssComponentDir).'">'; }
 
-      $ArtaniComponentDir = searchFile(ARTANI_COMPONENTS_DIR, "$component.php");
+      $ArtaniComponentDir = searcher(ARTANI_COMPONENTS_DIR, "$component.php");
       require $ArtaniComponentDir;
 
-      if(($jsComponentDir=searchFile(JS_DIR, "$component.js"))){ 
-        layout::jsPush($jsComponentDir); }
+      if(($jsComponentDir=searcher(JS_DIR, "$component.js"))){ 
+        $page->jsPush(htmlNormalizer($jsComponentDir)); }
         
-        
-
       if($data){
         extract($data); }            
     }   

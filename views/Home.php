@@ -13,11 +13,10 @@ $Home::descriptions(
   'enéssima descrição sem noção alguma só pra testar um formato maior de informação']   );
 
 $Home::endHead();
-
 ?> <!--body section--> <?php
 $Home::config('Main');
-  Component::render('Navbar');
-  Component::render('Loading');
+  Component::render($Home, 'Navbar');
+  Component::render($Home, 'Loading');
 
 ?> <!--footer section-->  <?php  
 $Home::config('Footer');
@@ -26,5 +25,5 @@ $Home::config('Footer');
 $Home::config('endFooter');
 
 
-$Home::endBody();
+$Home->endBody();
 ?>
