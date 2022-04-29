@@ -41,9 +41,9 @@ class Layout {
       echo '<link href="'.searcher(CSS_DIR, CSS_FRAMEWORK_FILE).'.css" rel="stylesheet">';
     }
 
-    if ($sass){
-      $sassCompiled = searcher(CSS_DIR, $sass);
-      echo '<link rel="stylesheet" href="'.$sassCompiled.'.css">';   }
+    if (isset($sass)){
+      $sassCompiled = htmlNormalizer(searcher(CSS_DIR, "$sass.css"));
+      echo '<link rel="stylesheet" href="'.$sassCompiled.'">';   }
     
     self::config('endHead');    }
 
