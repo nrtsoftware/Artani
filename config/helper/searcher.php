@@ -3,7 +3,7 @@
   /**@param $dir string Searching start path
     *@param  $file string Folder name or File name with extension
     *@param  $root Internal work variable 
-    *@return string Searched file or  */
+    *@return string Searched file or folder complete path  */
   function searcher(string $dir, string $file, ?array $root = null): string|bool{
     if (strpos($dir, DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR) != false){
       $dir = str_replace(DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR, $dir);
@@ -40,7 +40,7 @@
     return false;
     }
 
-    // --------------------- TESTE COM RECURSIVE DIRECTORY INTERATOR ------------------------------//
+    // ------------- TESTE COM RECURSIVE DIRECTORY INTERATOR - não funcioanl------------------------------//
     // function rsearcher($dir, $file){
     //   if (strpos($dir, DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR) != false){
     //     $dir = str_replace(DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR, DIRECTORY_SEPARATOR, $dir);
